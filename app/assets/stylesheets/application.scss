@@ -18,3 +18,24 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
+.homes_top {
+ position: relative;
+}
+
+.homes_top p {
+ position: absolute;
+ top: 0;
+ left: 0 ;
+}
+
+.homes_top img {
+ width: 100%;
+}
+
+
