@@ -13,9 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
 
  * {
    margin: 0;
@@ -35,3 +37,5 @@
 .homes_top img {
  width: 100%;
 }
+
+

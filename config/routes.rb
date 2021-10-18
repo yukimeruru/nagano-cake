@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     registrations: "member/registrations",
     sessions: "member/sessions"
   }
-  
+
   namespace :master do
     resources :items
     resources :genres
@@ -30,7 +30,5 @@ Rails.application.routes.draw do
     patch "members/checkout" => "members#checkout"
     resources :deliveries
   end	
-  
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

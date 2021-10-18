@@ -1,0 +1,28 @@
+<h3>注文情報入力</h3>
+<%= form_with model: @order, url:"/orders/new", local: true do |f| %>
+
+<div>
+    支払方法
+    <div>
+      <%= f.radio_button :payment_method, 0 %> クレジットカード
+    </div>
+    <div>
+      <%= f.radio_button :payment_method, 1 %>　銀行振込
+    </div>
+  </div>
+  <div>
+    お届け先
+    <div>
+      <%= f.radio_button :done, 0 %>
+      <%= f.label :done, 'ご自身の住所', value: 0 %>
+    </div>
+    <div>
+      <%= f.radio_button :done, 1 %>
+      <%= f.label :done, '登録先住所から選択', value: 1 %>
+    </div>
+    <div>
+      <%= f.radio_button :done, 2 %>
+      <%= f.label :done, '新しいお届け先', value: 2 %>
+    </div>
+  </div>
+<% end %>
