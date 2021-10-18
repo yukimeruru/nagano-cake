@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :items
     resources :genres
     resources :orders
-    patch "order_details/:id" => "order_details#update"
+    patch "order_items/:id" => "order_items#update"
     resources :members
   end
 
