@@ -1,9 +1,13 @@
 class Public::OrdersController < ApplicationController
 
   def new
+    @order = Order.new
   end
   
   def create
+    order = Oeder.new(order_params)
+    order.save
+    redirect_to orders_check_path
   end
   
   def index
