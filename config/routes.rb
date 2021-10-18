@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :members
   end
 
-  namespace :public do
+  scope module: :public do
     root "homes#top"
     get "about" => "homes#about"
     resources :items
