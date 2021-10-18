@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     registrations: "member/registrations",
     sessions: "member/sessions"
   }
-  
+
   namespace :master do
     resources :items
     resources :genres
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :members
   end
 
-  namespace :public do
+  scope module: :public do
     root "homes#top"
     get "about" => "homes#about"
     resources :items
@@ -29,9 +29,7 @@ Rails.application.routes.draw do
     get "members/out" => "members#out"
     patch "members/checkout" => "members#checkout"
     resources :deliveries
-  end	
-  
-  
-  
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
