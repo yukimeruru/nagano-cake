@@ -1,5 +1,5 @@
 <h3>商品新規登録</h3>
-<%= form_with model: @item, url:"/master/items/new", local: true do |f| %>
+<%= form_with model: @item, url:"/master/items", local: true do |f| %>
 
   <div>
     商品画像
@@ -19,17 +19,15 @@
   </div>
   <div>
     税抜価格
-    <%= f.text_field :praice %>円
+    <%= f.text_field :price %>円
   <div>
   <div>
     販売ステータス
     <div>
-      <%= f.radio_button :done, true %>
-      <%= f.label :done, '販売中', value: true %>
+      <%= f.radio_button :sales_status, true %> 販売中
     </div>
     <div>
-      <%= f.radio_button :done, false %>
-      <%= f.label :done, '販売停止', value: false %>
+      <%= f.radio_button :sales_status, false %> 販売停止
     </div>
   </div>
   

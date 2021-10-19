@@ -6,6 +6,8 @@ class Public::OrdersController < ApplicationController
   
   def create
     order = Oeder.new(order_params)
+    if params[:order][:done] == 0
+    end
     order.save
     redirect_to orders_check_path
   end
