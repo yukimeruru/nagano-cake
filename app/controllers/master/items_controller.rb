@@ -7,7 +7,7 @@ class Master::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to master_items_path
+    redirect_to master_item_path(@item.id)
   end
   
   def index
@@ -26,7 +26,7 @@ class Master::ItemsController < ApplicationController
   private
   
     def item_params
-      params.require(:item).permit(:name, :description, :image, :price, :sales_status)
+      params.require(:item).permit(:name, :description, :image, :price, :sales_status, :genre_id)
     end
 
 end
