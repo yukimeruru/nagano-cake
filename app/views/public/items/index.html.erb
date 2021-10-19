@@ -1,10 +1,15 @@
 <div class='container'>
   <h3>商品一覧</h3>
-  <% @items.each do |item| %>
-  <div>
-    <%= attachment_image_tag item, :image, size: "300x300" %>
-    <%= item.name %>
-    <%= item.price %>
-  </div>
-  <% end %>
+  <table class='table'>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= attachment_image_tag(item, :image,:fill, 50, 50, fallback: "homes-top.jpg") %></td>
+          <td><%= item.name %></td>
+          <td><%= item.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @items_page %>
 </div>

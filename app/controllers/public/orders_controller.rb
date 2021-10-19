@@ -19,6 +19,7 @@ class Public::OrdersController < ApplicationController
   end
   
   def check
+    @orders = Oeder.find(params[:id])
   end
   
   def thanks
