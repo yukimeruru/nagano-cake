@@ -1,31 +1,31 @@
 
 <div class='container'>
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-11">
-      <h2 class="head-line title_h2 text-center">ログイン</h2>
-       <h3 class="head-line title_h3 text-center">会員の方はこちらからログイン</h3>
-      
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-         <%= f.label :email %><br />
-         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+    <div class='col-12'>
+      <h2 class="head-line  my-5">ログイン</h2>
+       <h6 class="head-line  my-6">会員の方はこちらからログイン</h6>
+        <div class="row justify-content-center">
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        
+          <div class="field mt-5">
+            <%= f.label :メールアドレス, class: "mr-3"%>
+            <%= f.text_field :email, autofocus: true, size:"50", class: "name" %>
+          </div>
+          <div class="field">
+            <%= f.label :パスワード, class: "mr-5" %>
+            <%= f.password_field :password, size:"50", autocomplete: "off", class: "password" %>
+          </div>
 
-        <div class="field">
-         <%= f.label :password %><br />
-         <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-         <div class="field">
-           <%= f.check_box :remember_me %>
-           <%= f.label :remember_me %>
-        </div>
+          <div class="actions text-center mt-4">
+            <%= f.submit "ログイン" ,class: 'btn btn-primary px-4'%>
+          </div>
+        
+          <div class="col-xs-9">
+           <h6 class="head-line title_h3 my-6">登録がお済みではない方</h6>
+             <p class="new-link"> <%= render "member/shared/links" %> から新規登録を行ってください。
+          </div>
         <% end %>
-
-        <div class="actions">
-         <%= f.submit "Log in" %>
-        </div>
-        <% end %>
-
-        <%= render "member/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
