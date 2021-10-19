@@ -26,7 +26,7 @@ class Master::ItemsController < ApplicationController
   private
   
     def item_params
-      params.reSquire(:item).permit(:name, :description, :image, :price, :sales_status)
+      params.require(:item).permit(:name, :description, :image, :price, :sales_status)
     end
 
 end
