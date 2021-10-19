@@ -32,10 +32,18 @@
  position: absolute;
  top: 0;
  left: 0 ;
+ top: 50%; /* 追記 */
+ left: 50%; /* 追記 */
+ -ms-transform: translate(-50%, -50%); /* 追記 */
+ -webkit-transform: translate(-50%, -50%); /* 追記 */
+ transform: translate(-50%, -50%); /* 追記 */
 }
 
 .homes_top img {
- width: 100%;
+ width: 100% ;
 }
 
+.pagination {
+  justify-content: center;
+}
 
