@@ -2,6 +2,7 @@ class Public::DeliveriesController < ApplicationController
 
   def create
     @delivery = Delivery.new(delivery_params)
+    @delivery.member_id = current_member.id
     @delivery.save
     redirect_to deliveries_path
   end
