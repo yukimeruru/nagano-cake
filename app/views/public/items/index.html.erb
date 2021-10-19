@@ -1,1 +1,8 @@
-商品一覧画面
+<div class='container'>
+  <h3>商品一覧</h3>
+  <% @items.each do |item| %>
+    <%= @item.image_id %>
+    <%= @item.name %>
+    <%= @item.price %>
+  <% end %>
+</div>
