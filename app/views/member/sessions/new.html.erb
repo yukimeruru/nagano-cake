@@ -4,7 +4,7 @@
     <div class="col-xs-offset-1 col-xs-11">
       <h2 class="head-line title_h2 text-center">ログイン</h2>
        <h3 class="head-line title_h3 text-center">会員の方はこちらからログイン</h3>
-      
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
          <%= f.label :email %><br />
@@ -29,3 +29,6 @@
         <% end %>
 
         <%= render "member/shared/links" %>
+   </div>
+  </div>
+</div>
