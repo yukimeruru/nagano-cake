@@ -7,9 +7,7 @@ class Master::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-
     redirect_to master_item_path(@item.id)
-
   end
   
   def index

@@ -8,8 +8,7 @@
   	<table class='table'>
   		  <tr>
   		    <td>
-            <%= attachment_image_tag(@item, :image_id, :fill, 100, 100) %>
-            <% end %>
+            <%= attachment_image_tag(@item, :image, :fill, 100, 100) %>
           </td>
           <td>商品名<%= @item.name %></td>
           <tb>商品説明<%= @item.description %></tb>
@@ -18,7 +17,6 @@
               (税抜価格)
           <tb>販売ステータス<%= @item.sales_status %></tb>
           <td><%= link_to '編集', edit_master_item_path(@item), class: "btn btn-sm btn-success" %></td>
-          <% end %>
         </tr>
       </table>
     </div>
