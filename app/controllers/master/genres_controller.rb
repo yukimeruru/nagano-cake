@@ -1,7 +1,7 @@
 class Master::GenresController < ApplicationController
   
   def create
-    genre =Genre.new(genre_params)
+    genre = Genre.new(genre_params)
     genre.save
     redirect_to master_genres_path
   end
