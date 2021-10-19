@@ -1,7 +1,7 @@
 <h3>注文情報入力</h3>
 <%= form_with model: @order, url:"/orders/new", local: true do |f| %>
 
-<div>
+  <div>
     支払方法
     <div>
       <%= f.radio_button :payment_method, 0 %> クレジットカード
@@ -25,4 +25,5 @@
       <%= f.label :done, '新しいお届け先', value: 2 %>
     </div>
   </div>
+   <%= f.submit '新規登録' %>
 <% end %>
