@@ -17,9 +17,15 @@ class Public::DeliveriesController < ApplicationController
   end
 
   def update
+    @delivery = Delivery.find(params[:id])
+    @delivery.update(delivery_params)
+    redirect_to deliveries_path
   end
 
   def destroy
+    @delivery = Delivery.find(params[:id])
+    @delivery.destroy
+    redirect_to deliveries_path
   end
 
   private

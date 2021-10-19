@@ -1,9 +1,9 @@
 <h2>商品詳細</h2>
 
-<%= attachment_image_tag (item, :image, size: "100x100") %>
-<%= item.name %>
-<%= item.description %>
-<%= item.price %>
+<%= attachment_image_tag(@item, :image,:fill, 100, 100) %>
+<%= @item.name %>
+<%= @item.description %>
+<%= @item.price %>
 
 <%= form_with model: @item, local:true do |f| %>
   <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
