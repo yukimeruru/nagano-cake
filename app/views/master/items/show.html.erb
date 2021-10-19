@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <div class="row">
+    <h2>商品詳細</h2>
+  </div>
+  
+   <div class="row mt-3">
+     <div class="col-md-3 offset-md-3">
+  	<table class='table'>
+  		  <tr>
+  		    <td>
+            <%= attachment_image_tag(@item, :image_id, :fill, 100, 100) %>
+            <% end %>
+          </td>
+          <td>商品名<%= @item.name %></td>
+          <tb>商品説明<%= @item.description %></tb>
+          <tb>ジャンル<%= @item.genre_id %></tb>
+          <tb>税込価格<%= @item.price %></tb></br>
+              (税抜価格)
+          <tb>販売ステータス<%= @item.sales_status %></tb>
+          <td><%= link_to '編集', edit_master_item_path(@item), class: "btn btn-sm btn-success" %></td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+</div>
