@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="my-4">
+        <%= @member.last_name %><%= @member.first_name %>さんの会員情報編集
+      </h4>
+      <%= form_with model: @member, url: master_member_path(@member.id), local: true do |f| %>
+      <table class="table">
+        <tr>
+          <th>会員ID</th>
+          <td><%= @member.id %></td>
+        </tr>
+        <tr>
+          <th>氏名</th>
+          <td><%= f.text_field :last_name %> <%= f.text_field :first_name %></td>
+        </tr>
+        <tr>
+          <th>フリガナ</th>
+          <td><%= f.text_field :last_name_kana %> <%= f.text_field :first_name_kana %></td>
+        </tr>
+        <tr>
+          <th>郵便番号</th>
+          <td><%= f.number_field :post_code %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= f.text_field :address, :size=>"60x1" %></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= f.number_field :phone_number %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= f.email_field :email, :size=>"30x1" %></td>
+        </tr>
+        <tr>
+          <th>会員ステータス</th>
+          <td>
+            <div>
+              <%= f.radio_button :member_status, true %>
+              <%= f.label :member_status, "有効" %>
+              <%= f.radio_button :member_status, false %>
+              <%= f.label :member_status, "退会" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><%= f.submit "変更を保存", class: "btn btn-success mt-4" %></td>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

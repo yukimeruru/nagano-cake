@@ -1,7 +1,7 @@
 class Public::HomesController < ApplicationController
 
   def top
-    @items = Item.all.order("id ASC").limit(4)
+    @items = Item.all.order("id DESC").limit(4)
   end
 
   def about

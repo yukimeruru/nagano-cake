@@ -30,8 +30,6 @@
 
 .homes_top p {
  position: absolute;
- top: 0;
- left: 0 ;
  top: 50%; /* 追記 */
  left: 50%; /* 追記 */
  -ms-transform: translate(-50%, -50%); /* 追記 */
@@ -41,6 +39,10 @@
 
 .homes_top img {
  width: 100% ;
+}
+
+.item-link {
+ margin-left: auto;
 }
 
 .pagination {
