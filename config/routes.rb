@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
+
   devise_for :members, skip: :all,controllers: {
     
+
   }
 
     devise_scope :member do

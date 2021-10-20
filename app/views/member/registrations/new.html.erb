@@ -1,72 +1,71 @@
 <div class='container'>
   <div class="row">
     <div class="col-xs-12">
-      <h5 class="head-line my5">新規会員登録</h5>
 
-
-        <%= form_for(resource, as: resource_name, url:new_member_registration_path) do |f| %>
+      <h4 class="head-line my-5">新規会員登録</h4>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "member/shared/error_messages", resource: resource %>
 
-
-          <div class="field form-group row mt-3">
-           <%= f.label :"名前", class: "col-sm-2 control-label" %>
-           <%= f.label :"(姓)", class: "col-sm-1 control-label" %>
-
-           <%= f.text_field :last_name, autofocus: true, placeholder:"令和", class: "col-sm-3 form-control-static name" %>
-           <%= f.label :"(名)", class: "col-sm-1 control-label" %>
-
-           <%= f.text_field :first_name, autofocus: true, placeholder:"道子",class: "col-sm-3 form-control-static name" %>
+          <div class="field form-group row">
+            <%= f.label :"名前", class: "col-3 control-label" %>
+            <%= f.label :"(姓)", class: "col-1 control-label" %>
+            <%= f.text_field :last_name, autofocus: true, placeholder:"令和", class: "col-3 form-control" %>
+            <%= f.label :"(名)", class: "col-1 control-label" %>
+            <%= f.text_field :first_name, autofocus: true, placeholder:"道子",class: "col-3 form-control" %>
 
           </div>
 
-          <div class="field form-group row mt-3">
-           <%= f.label :"フリガナ", class: "col-sm-2 control-label" %>
-           <%= f.label :"(セイ)", class: "col-sm-1 control-label" %>
-           <%= f.text_field :last_name_kana, autofocus: true, placeholder:"レイワ", class: "col-sm-3 form-control-static name" %>
-           <%= f.label :"(メイ)", class: "col-sm-1 control-label" %>
-           <%= f.text_field :first_name_kana, autofocus: true, placeholder:"ミチコ",class: "col-sm-3 form-control-static name" %>
-          </div>
-
-          <div class="field form-group row mt-3">
-           <%= f.label :"メールアドレス", class: "col-sm-3 control-label" %>
-           <div class="col-sm-3">
-           <%= f.email_field :email, autofocus: true, class: "col-sm-6 form-control-static email" %>
-          </div>
-
-          <div class="form-group row mt-3">
-          <%= f.label :post_code, "郵便番号(ハイフンなし)", class: 'col-sm-4 col-form-label' %>
-          <div class="col-sm-3">
-            <%= f.text_field :post_code, class: 'form-control-static', placeholder:"0000000" %>
+          <div class="field form-group row">
+            <%= f.label :"フリガナ", class: "col-3 control-label" %>
+            <%= f.label :"(セイ)", class: "col-1 control-label" %>
+            <%= f.text_field :last_name_kana, autofocus: true, placeholder:"レイワ", class: "col-3 form-control" %>
+            <%= f.label :"(メイ)", class: "col-1 control-label" %>
+            <%= f.text_field :first_name_kana, autofocus: true, placeholder:"ミチコ",class: "col-3 form-control" %>
           </div>
 
 
 
-        <div class="form-group row mt-3">
-          <%= f.label :"住所", class: "col-sm-2 control-label" %>
-          <%= f.text_field :address, autofocus: true, class: "col-sm-8 form-control-static address"  %>
-        </div>
+          <div class="field form-group row">
+            <%= f.label :"メールアドレス", class: "col-4 control-label" %>
+            <%= f.email_field :email, autofocus: true, class: "col-6 form-control",  placeholder:"sample@example.com" %>
 
-        <div class="form-group row mt-3">
-          <%= f.label :"電話番号", class: "col-sm-4 control-label" %>
-          <%= f.text_field :phone_number, class: "col-sm-4 form-control-static phone_number" %>
-        </div>
+          </div>
 
-        <div class="field form-group row mt-3">
-          <%= f.label :"パスワード(6文字以上)", class: "col-sm-4 control-label" %>
-          <%= f.password_field :password, autocomplete: "new-password", class: "col-sm-4 form-control-static" %>
-        </div>
+          <div class="field form-group row">
+            <%= f.label :"郵便番号(ハイフンなし)", class: 'col-4 control-label' %>
+            <%= f.number_field :post_code, class: 'col-6 form-control', placeholder:"0000000" %>
+          </div>
 
-        <div class="field form-group row mt-3">
-          <%= f.label :"パスワード(確認用)", class: "col-sm-4 control-label" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-sm-4 form-control-static" %>
-        </div>
-        <div class="actions col-xs-9">
-          <%= f.submit "新規登録",class: 'btn btn-success btn-lg col-xs-7' %>
-        </div>
+
+
+          <div class="field form-group row">
+            <%= f.label :"住所", class: "col-4 control-label" %>
+            <%= f.text_field :address, autofocus: true, class: "col-8 form-control", placeholder:"東京都渋谷区代々木神園町０－０" %>
+          </div>
+
+          <div class="field form-group row">
+            <%= f.label :"電話番号", class: "col-4 control-label" %>
+            <%= f.number_field :phone_number, class: "col-4 form-control", placeholder:"00000000000" %>
+          </div>
+
+          <div class="field form-group row">
+            <%= f.label :"パスワード(6文字以上)", class: "col-4 control-label" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "col-4 form-control" %>
+          </div>
+
+          <div class="field form-group row">
+            <%= f.label :"パスワード(確認用)", class: "col-4 control-label" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-4 form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.label :" ", class: "col-4 control-label" %>
+            <%= f.submit "新規登録",class: 'btn btn-success btn-lg' %>
+          </div>
+
         <% end %>
     　   <div class="col-xs-9">
-          <h8 class="head-line title_h2 text-center">既に登録済みの方</h8>
-            <p class="new-link"><%= render "member/shared/links" %>からログインしてください。</p>
+          <h4 class="head-line">既に登録済みの方</h4>
+            <p class="new-link"> <%= render "member/shared/links" %> からログインしてください。</p>
         </div>
     </div>
   </div>
