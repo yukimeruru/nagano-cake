@@ -8,11 +8,47 @@
       <th>小計</th>
     </tr>
   </thead>
-  <% @orders.each do |order| %>
+  <% @cart_items.each do |cart_item| %>
   <tbody>
     <tr>
       <td>
         <%= order.item.image %>
+        <%= item.name(item_id)%>
+      </td>
+      <td>
+        <%= order.item.price*1.1 %>
+      </td>
+      <td>
+        <%= order_item.count %>
+      </td>
+      <td>
+        <%= order.item.price*1.1*order_item.count %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>送料</th>
+      <th>商品合計</th>
+      <th>請求金額</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= 800 %>
+      </td>
+      <td>
+        <%=  %>
+      </td>
+      <td>
+        <%=  %>
+      </td>
+      <td>
+        <%=  %>
       </td>
     </tr>
   </tbody>
