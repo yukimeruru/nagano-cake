@@ -1,8 +1,9 @@
 <div class='container'>
   <div class="row">
-    <div class='col-12'>
+    <div class='col-6'>
       <h2 class="head-line  my-5">マイページ</h2>
         <table class="table table-bordered">
+          <h4 class ="col-auto my-1 end-0">登録情報<%= link_to '編集する', edit_members_path, class: "btn btn- btn-success" %></h4>
           <thead>
             <tbody>
               <tr>
@@ -38,6 +39,8 @@
             </tbody>
           </thead>
         </table>
+        <h4 class ="col-auto my-1 end-0">配送先<%= link_to '一覧を見る', deliveries_path, class: "btn btn-sm btn-primary" %></h4>
+        <h4 class ="col-auto my-1 end-0">注文一覧<%= link_to '一覧を見る', orders_path, class: "btn btn-sm btn-primary" %></h4>
       </div>
     </div>
   </div>
