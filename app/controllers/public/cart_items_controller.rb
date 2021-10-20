@@ -22,7 +22,7 @@ class Public::CartItemsController < ApplicationController
   private
   
     def cart_item_params
-      params.require(:cart_item).permit(:count)
+      params.require(:cart_item).permit(:count, :item_id)
     end
 
 end

@@ -6,8 +6,8 @@ class Public::OrdersController < ApplicationController
   
   def create
     
-    @order.member_id = current_member.id
-    @oder.save
+    
+    @order.save
     redirect_to orders_thanks_path
   end
   
@@ -36,7 +36,7 @@ class Public::OrdersController < ApplicationController
       render 'new'
     end
     
-    @cart_item = CartItem.find(cart_item_params)
+    @cart_item = CartItem.find(cart_item_params[:id])
   end
   
   def thanks
