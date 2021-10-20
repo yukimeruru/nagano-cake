@@ -2,7 +2,7 @@ class Master::ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    
+
   end
 
   def new
@@ -23,7 +23,7 @@ class Master::ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  
+
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
