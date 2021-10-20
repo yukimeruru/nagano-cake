@@ -1,11 +1,21 @@
-<h2>商品詳細</h2>
-
-<%= attachment_image_tag(@item, :image,:fill, 100, 100) %>
-<%= @item.name %>
-<%= @item.description %>
-<%= @item.price %>
-
-<%= form_with model: @item, local:true do |f| %>
-  <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
-  <%= f.submit 'カートに入れる', class: "btn btn-sm btn-success" %>
-<% end %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-4 offset-md-1">
+      <%= attachment_image_tag(@item, :image,:fill, 200, 200) %>
+    </div>
+    <div class="col-4">
+      <h3><%= @item.name %></h3>
+      <p><%= @item.description %></p>
+      <p>¥ <%= @item.price %><small>（税込）</small></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 offset-md-8">
+      <%= form_with model: @item, local:true do |f| %>
+      <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
+      <%= f.submit 'カートに入れる', class: "btn btn-sm btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
