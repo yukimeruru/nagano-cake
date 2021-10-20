@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-  devise_for :members, skip: [:passwords,], controllers:{
+  devise_for :members, skip: [:passwords], controllers: {
     registrations: "member/registrations",
     sessions: "member/sessions"
   }
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     patch "order_items/:id" => "order_items#update"
     resources :members
   end
-
 
   scope module: :public do
     root "homes#top"
