@@ -8,49 +8,55 @@
       <th>小計</th>
     </tr>
   </thead>
-  <% @cart_items.each do |cart_item| %>
+  <% current_member.cart_items.each do |cart_item| %>
   <tbody>
     <tr>
       <td>
-        <%= order.item.image %>
-        <%= item.name(item_id)%>
+        <%= attachment_image_tag cart_item.item.image, :size => '50x50' %>
+        <%= cart_item.item.name %>
       </td>
       <td>
-        <%= order.item.price*1.1 %>
+        <%= cart_item.item.price * 1.1 %>
       </td>
       <td>
-        <%= order_item.count %>
+        <%= cart_item.item.count %>
       </td>
       <td>
-        <%= order.item.price*1.1*order_item.count %>
+        <%= cart_item.item.price * 1.1 * order_item.count %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<table class="table table-bordered">
+  
+  <tbody>
+    <tr>
+      <td>
+        送料
+      </td>
+      <td>
+        <%= 800 %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        商品合計
+      </td>
+      <td>
+        <%=  %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%=  %>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>送料</th>
-      <th>商品合計</th>
-      <th>請求金額</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <%= 800 %>
-      </td>
-      <td>
-        <%=  %>
-      </td>
-      <td>
-        <%=  %>
-      </td>
-      <td>
-        <%=  %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-  
+支払方法 <%= @order.payment_method %>
+お届け先　〒<%= @order.post_code %> <%= @order.address %> <%= @order.name %> 
+
+<%= f.submit "購入を確定する", class: "btn btn-success" %>
