@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
-    </div>
-    <div class="col-11 mt-4 mx-auto">
-      <div class="homes_top">
+    <div class="col-11 my-4 mx-auto">
+      <div class="homes_top ">
         <%= image_tag 'homes-top.jpg', size: "300x450" %>
         <p class="h5">
           ようこそ、ながのCAKEへ！<br>
@@ -11,13 +10,18 @@
           購入には会員登録が必要になります。
         </p>
       </div>
-      <div class="mt-4">
-        <h4>新着商品</h4>
+      <h4 class="my-3">新着商品</h4>
+      <div class="row">
         <% @items.each do |item| %>
-          <div class="col-lg-3 col-md-6 mb-4">
-            
+          <div class="col-3">
+            <%= attachment_image_tag(item, :image,:fill, 150, 150, fallback: "homes-top.jpg") %><br>
+            <%= item.name %><br>
+            <%= item.price %>円
           </div>
         <% end %>
+        <div class="item-link">
+          <%= link_to "全ての商品を見る＞", items_path %>
+        </div>
       </div>
     </div>
   </div>

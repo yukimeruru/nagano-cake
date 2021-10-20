@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="container mt-4">
+    <div class="container">
       <div class="col-12">
-        <h4 class="mb-3">会員一覧</h4>
+        <h4 class="my-4">会員一覧</h4>
         <table class="table">
           <thead>
             <tr>
@@ -16,15 +16,32 @@
           <% @members.each do |member| %>
             <tr>
               <td><%= member.id %></td>
-              <td><%= member.last_name %></td>
+              <td>
+                <%= link_to master_member_path(member.id) do %>
+                <%= member.last_name %><%= member.first_name %>
+                <% end %>
+              </td>
               <td><%= member.email %></td>
-              <td><%= member.member_status %></td>
+              <td>
+                <!--会員ステータスカラムが default: true のため trueを記入-->
+                <% if member.member_status == true %>
+                  <div class="text-success"><strong>有効</strong></div>
+                <% else %>
+                  <div class="text-danger"><strong>退会</strong></div>
+                <% end %>
+              </td>
             </tr>
           <% end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
-      </div>
       <div class="pagination"><%= paginate @members %></div>
+      </div>
     </div>
   </div>
 </div>
