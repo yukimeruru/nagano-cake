@@ -1,0 +1,43 @@
+<div class='container'>
+  <div class="row">
+    <div class='col-12'>
+      <h2 class="head-line  my-5">マイページ</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tbody>
+              <tr>
+                <th scope="row">氏名</th>
+                  <td colspan="2">
+                    <%= @member.last_name %>
+                    <%= @member.first_name %>
+                    </td>
+              </tr>
+              <tr>
+                <th scope="row">カナ</th>
+                 <td colspan="2">
+                   <%= @member.last_name_kana %>
+                   <%= @member.first_name_kana %>
+                  </td>
+              </tr>
+              <tr>
+                <th scope="row">郵便番号</th>
+                  <td colspan="2"><%= @member.post_code %></td>
+                </tr>
+              <tr>
+                <th scope="row">住所</th>
+                  <td colspan="2"><%= @member.address%></td>
+              </tr>
+              <tr>
+                <th scope="row">電話番号</th>
+                  <td colspan="2"><%= @member.phone_number %></td>
+                </tr>
+              <tr>
+                <th scope="row">メールアドレス</th>
+                 <td colspan="2"><%= @member.email %></td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>

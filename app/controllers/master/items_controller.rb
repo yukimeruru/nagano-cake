@@ -2,6 +2,7 @@ class Master::ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    
   end
 
   def new
@@ -16,22 +17,21 @@ class Master::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    
   end
 
   def edit
     @item = Item.find(params[:id])
   end
 
+  
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-       redirect_to master_items_path(@item)
+      redirect_to master_items_path(@item.id)
     else
-      flash[:alert] = "商品が正常に保存されませんでした。"
-       render "edit"
+      flash[:alert] = "商品情報が正常に保存されませんでした。"
+      render "edit"
     end
-    
   end
 
   private
