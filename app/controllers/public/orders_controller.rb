@@ -5,11 +5,10 @@ class Public::OrdersController < ApplicationController
   end
   
   def create
-    order = Oeder.new(order_params)
-    if params[:order][:done] == 0
-    end
-    order.save
-    redirect_to orders_check_path
+    
+    @order.member_id = current_member.id
+    @oder.save
+    redirect_to orders_thanks_path
   end
   
   def index
@@ -19,7 +18,25 @@ class Public::OrdersController < ApplicationController
   end
   
   def check
-    @orders = Oeder.find(params[:id])
+    @order = Order.new(order_params)
+    if  params[:order][:address_number] == 0
+      @order.post_code = current_member.post_code
+      @order.address = current_member.address
+      @order.name = current_member.first_name+current_menber.last_name
+    elsif params[:order][:address_number] == 1
+      @deliveries = Delivery.find(params[:order][:deliverise_id])
+      @order.post_code = @deliveries.post_code
+      @order.address = @deliveries.adresse
+      @order.name = @deliveries.name
+    elsif params[:order][:address_number] == 2
+      @order.post_code = params[:order][:post_code]
+      @order.address = params[:order][:address]
+      @order.name = params[:order][:name]
+    else
+      render 'new'
+    end
+    
+    @cart_item = CartItem.find(cart_item_params)
   end
   
   def thanks
