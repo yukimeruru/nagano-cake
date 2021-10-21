@@ -23,11 +23,22 @@
         <tbody>
           <% @cart_items.each do |cart_item| %>
             <tr>
-              <td><%= cart_item.item.name %></td>
+              <td>
+                <div class="d-flex flex-row">
+                  <%= attachment_image_tag(cart_item.item, :image,:fill, 80, 50) %>
+                  <div class="d-flex align-items-center offset-md-1">
+                    <%= cart_item.item.name %>
+                  </div>
+                </div>
+              </td>
               <td><%= cart_item.item.taxin_price.floor.to_s(:delimited) %></td>
-              <td><%= cart_item.count %></td>
+              <td>
+                <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+                  <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
+                <% end %>
+              </td>
               <td><%= cart_item.sum_of_price.floor.to_s(:delimited) %></td>
-              <td class="d-flex justify-content-center">
+              <td class="">
                 <%= link_to '削除する', cart_item_path(cart_item.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %>
               </td>
             </tr>
