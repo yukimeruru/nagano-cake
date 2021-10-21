@@ -1,45 +1,68 @@
 <div class="container">
-  <div class="row">
-    <h3>ショッピングカート</h3>
-    <%= link_to 'カートを空にする', method: :delete, "data-confirm" => "カート内を空にしますか？", class: "btn btn-sm btn-danger" %>
+  <div class="row m-3">
+    <div class="col-4">
+      <h3>ショッピングカート</h3>
+    </div>
+    <div class="col-8 text-right">
+      <%= link_to 'カートを空にする',destroy_cart_item_path(@cart_items), method: :delete, "data-confirm" => "カート内を空にしますか？", class: "btn btn-sm btn-danger" %>
+    </div>
   </div>
 
-  <div class="row">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>商品名</th>
-          <th>単価（税込）</th>
-          <th>数量</th>
-          <th>小計</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @cart_items.each do |cart_item| %>
+  <div class="row m-3">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead class="table-active">
           <tr>
-            <td><%= cart_item.item.name %></td>
-            <td><%= cart_item.item.price %></td>
-            <td><%= cart_item.count %></td>
-            <td></td>
-            <td><%= link_to '削除する', cart_item_path(cart_item.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %></td>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td>
+                <div class="d-flex flex-row">
+                  <%= attachment_image_tag(cart_item.item, :image,:fill, 80, 50) %>
+                  <div class="d-flex align-items-center offset-md-1">
+                    <%= cart_item.item.name %>
+                  </div>
+                </div>
+              </td>
+              <td><%= cart_item.item.taxin_price.floor.to_s(:delimited) %></td>
+              <td>
+                <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+                  <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
+                <% end %>
+              </td>
+              <td><%= cart_item.sum_of_price.floor.to_s(:delimited) %></td>
+              <td class="">
+                <%= link_to '削除する', cart_item_path(cart_item.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="row">
-    <%= link_to '買い物を続ける', class: "btn btn-sm btn-success" %>
-    <table class="table table-bordered">
-      <tbody>
-        <th>合計金額</th>
-        <td></td>
-      </tbody>
-    </table>
+  <div class="row m-3">
+    <div class="col-3 offset-md-1">
+      <%= link_to '買い物を続ける', root_path, class: "btn btn-sm btn-primary" %>
+    </div>
+    <div class="col-4 offset-md-4">
+      <table class="table table-bordered">
+        <tbody>
+          <th class="table-active">合計金額</th>
+          <td><%= @total.floor.to_s(:delimited) %></td>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="row">
-    <%= link_to '情報入力に進む', class: "btn btn-sm btn-success" %>
+  <div class="d-flex justify-content-center row m-3 ">
+    <%= link_to '情報入力に進む',new_order_path(@cart_items), class: "btn btn-sm btn-success" %>
   </div>
 </div>

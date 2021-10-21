@@ -4,53 +4,47 @@
       <h4 class="my-5">
         <%= @member.last_name %><%= @member.first_name %>さんの会員詳細
       </h4>
-      <table class="table">
-        <tr>
-          <th>会員ID</th>
-          <td><%= @member.id %></td>
-        </tr>
-        <tr>
-          <th>氏名</th>
-          <td><%= @member.last_name %> <%= @member.first_name %></td>
-        </tr>
-        <tr>
-          <th>フリガナ</th>
-          <td><%= @member.last_name_kana %> <%= @member.first_name_kana %></td>
-        </tr>
-        <tr>
-          <th>郵便番号</th>
-          <td><%= @member.post_code %></td>
-        </tr>
-        <tr>
-          <th>住所</th>
-          <td><%= @member.address %></td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td><%= @member.phone_number %></td>
-        </tr>
-        <tr>
-          <th>メールアドレス</th>
-          <td><%= @member.email %></td>
-        </tr>
-        <tr>
-          <th>会員ステータス</th>
-          <td>
-            <% if @member.member_status == true %>
-              <div class="text-success"><strong>有効</strong></div>
-            <% else %>
-              <div class="text-danger"><strong>退会</strong></div>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th></th>
-          <td></td>
-        </tr>
-      </table>
+      <div class="row">
+        <p class="col-3">会員ID</p>
+        <p><%= @member.id %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-2">氏名</p>
+        <p class="my-2"><%= @member.last_name %> <%= @member.first_name %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">フリガナ</p>
+        <p class="my-3"><%= @member.last_name_kana %> <%= @member.first_name_kana %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">郵便番号</p>
+        <p class="my-3"><%= @member.post_code %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">住所</p>
+        <p class="my-3"><%= @member.address %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">電話番号</p>
+        <p class="my-3"><%= @member.phone_number %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">メールアドレス</p>
+        <p class="my-3"><%= @member.email %></p>
+      </div>
+      <div class="row">
+        <p class="col-3 my-3">会員ステータス</p>
       <div>
-        <%= link_to "編集する", edit_master_member_path, class: "btn btn-success mr-5" %>
-        <%= link_to "注文履歴一覧画面をみる", master_orders_path, class: "btn btn-primary ml-5" %>
+        <% if @member.member_status == true %>
+          <p class="text-success my-3"><strong>有効</strong></p>
+        <% else %>
+          <p class="text-danger my-3"><strong>退会</strong></p>
+        <% end %>
+      </div>
+      </div>
+      <div class="row offset-3 mt-3">
+        <%= link_to "編集する", edit_master_member_path, class: "btn btn-success" %>
+        <%= link_to "注文履歴一覧画面をみる", master_orders_path, class: "btn btn-primary offset-1" %>
       </div>
     </div>
   </div>
