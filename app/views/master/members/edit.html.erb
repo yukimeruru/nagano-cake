@@ -6,7 +6,7 @@
       </h4>
       <%= form_with model: @member, url: master_member_path(@member.id), local: true do |f| %>
         <div class="row">
-          <div class="col-3 mb-4">会員ID</div>
+          <p class="col-3 mb-4">会員ID</p>
           <div class="mb-4"><%= @member.id %></div>
         </div>
         <div class="field form-group row">

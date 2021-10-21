@@ -1,36 +1,37 @@
-<h3>商品新規登録</h3>
-<%= form_with model: @item, url:"/master/items", local: true do |f| %>
-
-  <div>
-    商品画像
-    <%= f.attachment_field :image %>
-  </div>
-  <div>
-    商品名
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    商品説明
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    ジャンル
-    <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
-  </div>
-  <div>
-    税抜価格
-    <%= f.text_field :price %>円
-  <div>
-  <div>
-    販売ステータス
-    <div>
-      <%= f.radio_button :sales_status, true %> 販売中
+<div class='container'>
+  <div class='row'>
+    <div class="col-12">
+    <h4 class="row offset-1 my-5">商品新規登録</h4>
+    <%= form_with model: @item, url:"/master/items", local: true do |f| %>
+      <div class="row form-group">
+        <%= f.label :商品画像, class: "col-3" %>
+        <%= f.attachment_field :image %>
+      </div>
+        <div class="row form-group">
+        <%= f.label :商品名, class: "col-3" %>
+        <%= f.text_field :name, class: 'col-6 form-control' %>
+      </div>
+      <div class="row form-group">
+        <%= f.label :商品説明, class: "col-3" %>
+        <%= f.text_area :description, class: 'col-6 form-control' %>
+      </div>
+      <div class="row form-group">
+        <%= f.label :ジャンル, class: "col-3" %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+      </div>
+      <div class="row form-group">
+        <%= f.label :税抜価格, class: "col-3" %>
+        <%= f.text_field :price, class: 'col-6 form-control' %>
+      </div>
+      <div class="row form-group">
+        <%= f.label :販売ステータス, class: "col-3"  %>
+        <%= f.radio_button :sales_status, true %> 販売中
+        <%= f.radio_button :sales_status, false, class: "offset-1" %> 販売停止
+      </div>
+      <div class="form-group">
+        <%= f.submit "新規登録", class: 'btn btn-success offset-4' %>
+      </div>
+    <% end %>
     </div>
-    <div>
-      <%= f.radio_button :sales_status, false %> 販売停止
-    </div>
   </div>
-
-    <%= f.submit '新規登録' %>
-
-<% end %>
+</div>
