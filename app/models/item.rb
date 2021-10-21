@@ -4,4 +4,9 @@ class Item < ApplicationRecord
    belongs_to :genre
    
    attachment :image
+   
+   def taxin_price
+        price*1.1
+   end
+   
 end
