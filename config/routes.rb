@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   devise_for :members, skip: :all,controllers: {
-
+    
 
   }
 
@@ -31,9 +31,12 @@ Rails.application.routes.draw do
     root "homes#top"
     get "about" => "homes#about"
     resources :items
+
     resources :cart_items, only: [:create, :index, :update, :destroy ]
     delete "cart_items" => "cart_items#destroy_all" ,as: :destroy_cart_item
+
     post "orders/check" => "orders#check"
+
     get "orders/thanks" => "orders#thanks"
     resources :orders
     resource :members
