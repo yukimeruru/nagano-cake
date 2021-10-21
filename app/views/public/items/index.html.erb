@@ -10,7 +10,7 @@
                 <%= attachment_image_tag(item, :image,:fill, 100, 100) %>
               <% end %>
               <%= item.name %>
-              <span>¥<%= item.price %></span>
+              <span>¥<%= item.taxin_price.floor.to_s(:delimited) %></span>
           </div>
         <% end %>
       </div>
