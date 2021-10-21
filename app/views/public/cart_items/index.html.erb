@@ -33,8 +33,9 @@
               </td>
               <td><%= cart_item.item.taxin_price.floor.to_s(:delimited) %></td>
               <td>
-                <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
-                  <%= f.select :count,[["1","1"],["2","2"],["3","3"]],include_blank: "個数選択" %>
+                <%= form_with model: cart_item, url: cart_item_path(cart_item.id), local:true do |f| %>
+                  <%= f.select :count,[["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]] %>
+                  <%= f.submit '変更', class: "btn btn-sm btn-success" %>
                 <% end %>
               </td>
               <td><%= cart_item.sum_of_price.floor.to_s(:delimited) %></td>
