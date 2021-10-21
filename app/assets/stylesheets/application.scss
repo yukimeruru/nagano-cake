@@ -23,6 +23,10 @@
    margin: 0;
    padding: 0;
  }
+ 
+ .container-fluid{
+  width: 80%;
+ }
 
 .homes_top {
  position: relative;
@@ -30,15 +34,17 @@
 
 .homes_top p {
  position: absolute;
- top: 50%; /* 追記 */
- left: 50%; /* 追記 */
- -ms-transform: translate(-50%, -50%); /* 追記 */
- -webkit-transform: translate(-50%, -50%); /* 追記 */
- transform: translate(-50%, -50%); /* 追記 */
+ width: 100%;
+ top: calc(45% - 25px);
+ text-align: center;
 }
 
 .homes_top img {
  width: 100% ;
+}
+
+.about{
+ font-size: 80px;
 }
 
 .item-link {

@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-11 my-4 mx-auto">
-      <div class="homes_top ">
-        <%= image_tag 'homes-top.jpg', size: "300x450" %>
-        <p class="h5">
+    <div class="col-12 my-1">
+      <div class="homes_top">
+        <%= image_tag 'homes-top3.jpg', size: "700x450" %>
+        <p class="h4">
           ようこそ、ながのCAKEへ！<br>
           このサイトは、ケーキ販売のECサイトになります。<br>
           会員ではない方も商品の閲覧はできますが、<br>
           購入には会員登録が必要になります。
         </p>
       </div>
-      <h4 class="my-3">新着商品</h4>
+      <h4 class="mb-1">新着商品</h4>
       <div class="row">
         <% @items.each do |item| %>
           <div class="col-3">
-            <%= attachment_image_tag(item, :image,:fill, 150, 150, fallback: "homes-top.jpg") %><br>
+            <%= attachment_image_tag(item, :image,:fill, 170, 140, fallback: "no-image.jpg") %><br>
             <%= item.name %><br>
             <%= item.price %>円
           </div>
