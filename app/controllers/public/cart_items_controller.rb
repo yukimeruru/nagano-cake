@@ -1,8 +1,5 @@
 class Public::CartItemsController < ApplicationController
 
-  def new
-  end
-
   def create
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.member_id = current_member.id
@@ -15,16 +12,10 @@ class Public::CartItemsController < ApplicationController
     @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
   end
 
-  def show
-  end
-
-  def check
-  end
-
-  def thanks
-  end
-
   def update
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.update(cart_item_params)
+    redirect_to cart_items_path
   end
 
   def destroy
