@@ -17,9 +17,15 @@ class Public::MembersController < ApplicationController
   end
 
   def out
+    @member=Member.find_by(email: params[:email])
   end
 
   def checkout
+    @member = current_member
+    @member.update(member_status: false)
+    redirect_to root_path
+    
+    
   end
 
   private
