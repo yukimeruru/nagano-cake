@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get "about" => "homes#about"
     resources :items
     resources :cart_items
-    delete "cart_items" => "cart_items#destroy_all"
+    delete "cart_items" => "cart_items#destroy_all",as: :destroy_cart_item
     post "orders/check" => "orders#check"
     get "orders/thanks" => "orders#thanks"
     resources :orders
