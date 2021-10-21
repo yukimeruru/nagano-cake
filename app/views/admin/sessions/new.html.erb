@@ -2,19 +2,18 @@
 <div class='container'>
   <div class='row'>
     <div class="col-12">
-      <h3 class="my-5">管理者ログイン</h3>
-      <div class="row justify-content-center">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field mt-5">
-          <%= f.label :メールアドレス, class: "mr-3"%>
-          <%= f.text_field :email, autofocus: true, size:"50", class: "name" %>
+      <h4 class="my-5">管理者ログイン</h4>
+        <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+        <div class="field form-group row mt-5">
+          <%= f.label :メールアドレス, class: "col-3 offset-2" %>
+          <%= f.text_field :email, class: "form-control col-5"%>
         </div>
-        <div class="field">
-          <%= f.label :パスワード, class: "mr-5" %>
-          <%= f.password_field :password, size:"50", autocomplete: "off", class: "password" %>
+        <div class="field form-group row">
+          <%= f.label :パスワード, class: "col-3 offset-2" %>
+          <%= f.password_field :password, class: "form-control col-5" %>
         </div>
-        <div class="actions text-center mt-4">
-          <%= f.submit "ログイン" ,class: 'btn btn-primary px-4'%>
+        <div class="mt-5">
+          <%= f.submit "ログイン" ,class: 'btn btn-primary col-2 offset-5 '%>
         </div>
       <% end %>
       </div>

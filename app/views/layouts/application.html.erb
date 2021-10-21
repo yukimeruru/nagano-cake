@@ -11,10 +11,15 @@
 
   <body>
     <header>
-      <nav class="navbar navber-dark py-4" style="background-color:#ffffcc;">
-        <div class="container">
-        <%= link_to "ながのCAKE", root_path, class: "navbar-brand" %>
-          <ul class="navbar-nav flex-row">
+      <nav class="navbar navber-dark py-1" style="background-color:#ffffcc;">
+        <div class="container-fluid">
+        <div class="offset-1">
+          <%= link_to root_path, class: "navbar-brand", local: true do %>
+          <%= image_tag 'logo.png', size: "150x100"%>
+          <h5>　ながのCAKE</h5>
+          <% end %>
+        </div>
+          <ul class="navbar-nav flex-row ">
             <% if member_signed_in? %>
             　<div class="mt-2 mr-5">ようこそ、<%= current_member.last_name %>さん！</div>
               <li class="mr-3"><%= link_to "マイページ", members_path, class: "nav-link text-dark" %></li>
