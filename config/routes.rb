@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :items
     resources :cart_items
     delete "cart_items" => "cart_items#destroy_all"
-    get "orders/check" => "orders#check"
+    post "orders/check" => "orders#check"
     get "orders/thanks" => "orders#thanks"
     resources :orders
     resource :members
