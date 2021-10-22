@@ -2,9 +2,13 @@ class Master::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_items = OrderItem.all
   end
 
   def update
+    order = Order.find(params[:id])
+    order.update(order_params)
+    redirect_to master_order_path
   end
 
   private
