@@ -5,12 +5,12 @@ class Public::OrdersController < ApplicationController
     @order = Order.new
     p current_member
   end
-  
+
   def create
     @order = Order.new(order_params)
     @order.member_id = current_member.id
     @order.save
-    
+
     current_member.cart_items.each do |cart_item|
       @order_item = OrderItem.new
       @order_item.item_id = cart_item.item_id
@@ -19,18 +19,19 @@ class Public::OrdersController < ApplicationController
       @order_item.order_id =  @order.id
       @order_item.save
     end
-    
+
     current_member.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
-  
+
   def index
-    @order_items = OrderItem.all
+    @orders = current_member.orders
   end
-  
+
   def show
+    @order = Order.find(params[:id])
   end
-  
+
   def check
     params[:order][:payment_method] = params[:order][:payment_method].to_i
     @order = Order.new(order_params)
@@ -53,12 +54,12 @@ class Public::OrdersController < ApplicationController
     end
     @total = 0
   end
-  
+
   def thanks
   end
 
   private
-  
+
     def order_params
       params.require(:order).permit(:shipping, :payment_method, :final_price, :name, :post_code, :address, :order_status)
     end
