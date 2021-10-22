@@ -29,7 +29,7 @@
             <% elsif admin_signed_in?%>
               <li class="mr-3"><%= link_to "商品一覧", master_items_path, class: "nav-link text-dark" %></li>
               <li class="mr-3"><%= link_to "会員一覧", master_members_path, class: "nav-link text-dark" %></li>
-              <li class="mr-3"><%= link_to "注文履歴一覧", master_orders_path, class: "nav-link text-dark" %></li>
+              <li class="mr-3"><%= link_to "注文履歴一覧", master_root_path, class: "nav-link text-dark" %></li>
               <li class="mr-3"><%= link_to "ジャンル一覧", master_genres_path, class: "nav-link text-dark" %></li>
               <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark" %></li>
             <% else %>
