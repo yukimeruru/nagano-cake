@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :items
     resources :genres
     resources :orders, only: [:show, :update ]
-    patch "order_items/:id" => "order_items#update"
+    patch "order_items/:id" => "order_items#update",as: :order_item
     resources :members
   end
 
