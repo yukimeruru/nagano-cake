@@ -1,7 +1,12 @@
 class Master::OrdersController < ApplicationController
 
+  def index
+    @orders = Order.page(params[:page]).per(10)
+  end
+
   def show
     @order = Order.find(params[:id])
+    @orders = current_member.orders
     @order_items = OrderItem.all
   end
 
