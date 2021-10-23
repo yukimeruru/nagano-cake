@@ -1,7 +1,6 @@
 class Public::OrdersController < ApplicationController
 
   def new
-    @member = current_member
     @order = Order.new
     p current_member
   end
@@ -10,7 +9,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.member_id = current_member.id
     @order.save
-
+    
     current_member.cart_items.each do |cart_item|
       @order_item = OrderItem.new
       @order_item.item_id = cart_item.item_id
@@ -19,7 +18,6 @@ class Public::OrdersController < ApplicationController
       @order_item.order_id =  @order.id
       @order_item.save
     end
-
     current_member.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
@@ -33,8 +31,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def check
-    params[:order][:payment_method] = params[:order][:payment_method].to_i
     @order = Order.new(order_params)
+    @order.payment_method = params[:order][:payment_method].to_i
     p @order
     if  params[:order][:address_number] == "0"
       @order.post_code = current_member.post_code
@@ -61,10 +59,7 @@ class Public::OrdersController < ApplicationController
   private
 
     def order_params
-      params.require(:order).permit(:shipping, :payment_method, :final_price, :name, :post_code, :address, :order_status)
+      params.require(:order).permit(:shipping, :final_price, :name, :post_code, :address, :order_status)
     end
 
-    def order_items_params
-      params.require(:order).permit(:item_id, :order_id, :price, :count, :make_status)
-    end
 end
