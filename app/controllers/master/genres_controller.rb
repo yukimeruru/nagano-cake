@@ -1,11 +1,12 @@
 class Master::GenresController < ApplicationController
 
   def create
-    genre = Genre.new(genre_params)
-    if genre.save
+    @genre = Genre.new(genre_params)
+    if @genre.save
       redirect_to master_genres_path
     else
       flash.now[:alert] = "データが正常に保存されませんでした"
+      @genres  = Genre.all
       render 'index'
     end
   end
