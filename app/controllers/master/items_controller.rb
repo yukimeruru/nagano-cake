@@ -10,8 +10,12 @@ class Master::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to master_item_path(@item.id)
+    if @item.save
+      redirect_to master_item_path(@item.id)
+    else
+      flash.now[:alert] = "データが正常に保存されませんでした"
+      render 'new'
+    end
   end
 
   def show
