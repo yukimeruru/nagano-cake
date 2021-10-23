@@ -15,10 +15,9 @@ Rails.application.routes.draw do
     end
 
   namespace :master do
-    root "orders#index"
     resources :items
     resources :genres
-    resources :orders, only: [:show, :update ]
+    resources :orders, only: [:index, :show, :update ]
     patch "order_items/:id" => "order_items#update"
     resources :members
   end
