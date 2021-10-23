@@ -11,8 +11,12 @@ class Public::MembersController < ApplicationController
 
   def update
     @member = current_member
-    @member.update(member_params)
-    redirect_to members_path
+    if@member.update(member_params)
+    redirect_to members_path,notice:'更新されました'
+    else
+    render "edit"
+      
+    end
 
   end
 
@@ -22,8 +26,11 @@ class Public::MembersController < ApplicationController
 
   def checkout
     @member = current_member
-    @member.update(member_status: false)
+   if @member.update(member_status: false)
     redirect_to root_path
+   else
+    render "show"
+   end
     
     
   end
