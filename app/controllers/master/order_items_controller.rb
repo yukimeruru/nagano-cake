@@ -1,6 +1,7 @@
 class Master::OrderDetailsController < ApplicationController
 
   def update
+    @order_item = find(params[:id])
   end
 
   private
