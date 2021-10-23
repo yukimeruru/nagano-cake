@@ -1,7 +1,9 @@
-class Master::OrderDetailsController < ApplicationController
+class Master::OrderItemsController < ApplicationController
 
   def update
-    @order_item = find(params[:id])
+    @order_item = OrderItem.find(params[:id])
+    @order_item.update(order_item_params)
+    redirect_to master_order_path
   end
 
   private

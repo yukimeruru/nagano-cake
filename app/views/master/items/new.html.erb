@@ -2,6 +2,7 @@
   <div class='row'>
     <div class="col-12">
     <h4 class="row offset-1 my-5">商品新規登録</h4>
+    <%= flash.now[:alert] %>
     <%= form_with model: @item, url:"/master/items", local: true do |f| %>
       <div class="row form-group">
         <%= f.label :商品画像, class: "col-3" %>
