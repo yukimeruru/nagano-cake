@@ -19,7 +19,7 @@
               <%= order.member.last_name %>
               <%= order.member.first_name %>
             </td>
-            <td><%= order.order_items.count %></td>
+            <td><%= order.order_items.sum(:count) %></td>
             <td><%= order.order_status_i18n %></td>
           </tr>
         <% end %>

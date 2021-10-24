@@ -29,9 +29,8 @@ class Master::ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to master_items_path
+      redirect_to master_item_path,notice:'更新されました。'
     else
-      flash[:alert] = "商品情報が正常に保存されませんでした。"
       render "edit"
     end
   end
