@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row my-3">
-    <div class="col-3"></div>
+    <div class="col-3">
+      <%= render 'sidebar' %>
+    </div>
     <div class="col-8 offset-md-1">
       <h3>商品一覧　<small>全<%= @items.total_count %>件</small></h3>
       <div class="d-flex flex-row flex-wrap">
