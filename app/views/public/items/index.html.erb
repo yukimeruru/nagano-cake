@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row my-3">
+  <div class="row mt-5">
     <div class="col-3">
       <%= render 'sidebar' %>
     </div>
@@ -16,7 +16,9 @@
           </div>
         <% end %>
       </div>
+      <div class="m-5">
+        <%= paginate @items %>
+      </div>
     </div>
   </div>
-  <%= paginate @items %>
 </div>
