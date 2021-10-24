@@ -8,8 +8,12 @@ class Item < ApplicationRecord
    def taxin_price
         price*1.1
    end
-  # 商品バリデーション
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :price, presence: true
+  
+   validates :genre_id, presence: true
+   validates :name, presence: true
+   validates :description, presence: true
+   validates :image, presence: true
+   validates :price, presence: true
+   validates :sales_status, presence: true
+
 end
