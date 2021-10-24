@@ -23,7 +23,7 @@
    margin: 0;
    padding: 0;
  }
- 
+
  .container-fluid{
   width: 80%;
  }
@@ -63,4 +63,8 @@
 
 .detail {
   font-size: 20px;
+}
+
+.field_with_errors {
+  display: contents;
 }

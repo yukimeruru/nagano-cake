@@ -7,7 +7,7 @@ class Public::DeliveriesController < ApplicationController
       redirect_to deliveries_path
     else
       @deliveries = Delivery.all
-      render 'index'
+      render :index
     end
   end
 
@@ -25,7 +25,7 @@ class Public::DeliveriesController < ApplicationController
     if @delivery.update(delivery_params)
       redirect_to deliveries_path
     else
-      render 'edit'
+      render :edit
     end
   end
 
