@@ -6,7 +6,6 @@ class Master::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @orders = current_member.orders
     @order_items = OrderItem.all
   end
 

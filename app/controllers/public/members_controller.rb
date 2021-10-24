@@ -26,9 +26,10 @@ class Public::MembersController < ApplicationController
   def checkout
     @member = current_member
    if @member.update(member_status: false)
-    redirect_to root_path
+      reset_session 
+      redirect_to root_path
    else
-    render "show"
+      render "show"
    end
   end
 
