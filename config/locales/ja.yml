@@ -1,5 +1,11 @@
 ja:
   enums:
+    order_item:
+      make_status:
+        not_make: "製作不可"
+        wait_make: "製作待ち"
+        make: "製作中"
+        done_make: "製作完了"
     order:
       payment_method:
         credit_card: "クレジットカード"
@@ -10,9 +16,3 @@ ja:
         make: "製作中"
         ready: "発送準備中"
         shipped: "発送済み"
-    order_item:
-      make_status:
-        not_make: "製作不可"
-        wait_make: "製作待ち"
-        make: "製作中"
-        done_make: "製作完了"

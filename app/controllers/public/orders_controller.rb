@@ -9,7 +9,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.member_id = current_member.id
     @order.save
-    redirect_to orders_thanks_path
+
 
     current_member.cart_items.each do |cart_item|
       @order_item = OrderItem.new
@@ -17,12 +17,12 @@ class Public::OrdersController < ApplicationController
       @order_item.count = cart_item.count
 
       @order_item.price = (cart_item.item.price*1.1*cart_item.count).floor
-      @order_item.order_id = @order.id
+      @order_item.order_id =  @order.id
       @order_item.save
     end
 
     current_member.cart_items.destroy_all
-
+    redirect_to orders_thanks_path
   end
 
   def index
