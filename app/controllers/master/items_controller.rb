@@ -13,8 +13,7 @@ class Master::ItemsController < ApplicationController
     if @item.save
       redirect_to master_item_path(@item.id)
     else
-      flash.now[:alert] = "データが正常に保存されませんでした"
-      render 'new'
+      render :new
     end
   end
 

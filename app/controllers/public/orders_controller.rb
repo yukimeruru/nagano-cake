@@ -51,13 +51,13 @@ class Public::OrdersController < ApplicationController
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
       if @order.post_code.empty?
-        flash.now[:alert] = "空欄がないか確認してください"
+        flash.now[:alert] = "記入もれがないか確認してください。"
         render 'new'
       elsif @order.address.empty?
-        flash.now[:alert] = "空欄がないか確認してください"
+        flash.now[:alert] = "記入もれがないか確認してください。"
         render 'new'
       elsif @order.name.empty?
-        flash.now[:alert] = "空欄がないか確認してください"
+        flash.now[:alert] = "記入もれがないか確認してください。"
         render 'new'
       end
     end
