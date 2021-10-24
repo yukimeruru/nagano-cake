@@ -16,6 +16,7 @@ class Master::MembersController < ApplicationController
     member = Member.find(params[:id])
     member.update(member_params)
     redirect_to master_members_path
+    
   end
 
   private

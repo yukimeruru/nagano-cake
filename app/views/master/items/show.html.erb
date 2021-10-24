@@ -29,7 +29,7 @@
                 <tr>
                   <td>税込価格(税抜価格)</td>
                   <td class="detail">
-                     <%=@item.taxin_price.floor.to_s(:delimited) %>(<%= @item.price %>)円
+                     <%=@item.taxin_price.floor.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円
                   </td>
                 </tr>
 
