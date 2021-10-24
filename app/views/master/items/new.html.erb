@@ -1,3 +1,8 @@
+<% if @item.errors.any? %>
+  <%= @item.errors.count %>件のエラーが発生しました。全ての項目が記述されているか確認してください。
+
+<% end %>
+
 <div class='container'>
   <div class='row'>
     <div class="col-12">

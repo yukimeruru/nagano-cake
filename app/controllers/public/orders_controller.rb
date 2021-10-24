@@ -10,6 +10,7 @@ class Public::OrdersController < ApplicationController
     @order.member_id = current_member.id
     @order.save
 
+
     current_member.cart_items.each do |cart_item|
       @order_item = OrderItem.new
       @order_item.item_id = cart_item.item_id
@@ -19,6 +20,7 @@ class Public::OrdersController < ApplicationController
       @order_item.order_id =  @order.id
       @order_item.save
     end
+
     current_member.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
@@ -48,9 +50,18 @@ class Public::OrdersController < ApplicationController
       @order.post_code = params[:order][:post_code]
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
-    else
-      render 'new'
+      if @order.post_code.empty?
+        flash.now[:alert] = "記入もれがないか確認してください。"
+        render 'new'
+      elsif @order.address.empty?
+        flash.now[:alert] = "記入もれがないか確認してください。"
+        render 'new'
+      elsif @order.name.empty?
+        flash.now[:alert] = "記入もれがないか確認してください。"
+        render 'new'
+      end
     end
+
     @total = 0
   end
 

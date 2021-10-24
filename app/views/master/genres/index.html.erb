@@ -1,8 +1,11 @@
+<% if @genre.errors.any? %>
+  <%= @genre.errors.count %>件のエラーが発生しました。ジャンルが記述されているか確認してください。
+
+<% end %>
 <div class='container'>
   <div class="row">
     <div class="col-10">
       <h4 class="offset-1 my-4">ジャンル一覧・追加</h4>
-      <%= flash.now[:alert] %>
       <%= form_with model: @genre, url: '/master/genres', local: true do |f| %>
       <div class="field row form-group mb-5">
           <%= f.label :"ジャンル名", class: "col-3" %>

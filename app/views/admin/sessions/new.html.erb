@@ -4,6 +4,7 @@
     <div class="col-12">
       <h4 class="my-5">管理者ログイン</h4>
         <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+        <%= render "admin/shared/error_messages", resource: resource %>
         <div class="field form-group row mt-5">
           <%= f.label :メールアドレス, class: "col-3 offset-2" %>
           <%= f.text_field :email, class: "form-control col-5"%>
