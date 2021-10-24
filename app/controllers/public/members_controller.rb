@@ -15,7 +15,6 @@ class Public::MembersController < ApplicationController
     redirect_to members_path,notice:'更新されました'
     else
     render "edit"
-      
     end
 
   end
@@ -31,8 +30,6 @@ class Public::MembersController < ApplicationController
    else
     render "show"
    end
-    
-    
   end
 
   private
