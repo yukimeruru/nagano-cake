@@ -6,6 +6,8 @@ class Master::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+
   end
 
   def update
