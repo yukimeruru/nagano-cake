@@ -22,7 +22,7 @@
           </div>
           <div style="margin-left: 40px">
             <%= f.radio_button :address_number, 1 %> <%= f.label :登録先住所から選択 %>
-            <div style="margin-left: 30px"><%= f.collection_select :deliverise_id, Delivery.all, :id, :member_info, { prompt: '選択してください' }, class: 'form-control col-8' %></div>
+            <div style="margin-left: 30px"><%= f.collection_select :deliverise_id, @deliveries, :id, :member_info, { prompt: '選択してください' }, class: 'form-control col-8' %></div>
           </div>
           <div style="margin-left: 40px">
             <div class = table ></div>
