@@ -1,5 +1,5 @@
 class Master::OrderItemsController < ApplicationController
-  
+
   def update
     @order_item = OrderItem.find(params[:id])
     @order_item.update(order_item_params)
