@@ -1,5 +1,5 @@
 class Public::CartItemsController < ApplicationController
-
+  before_action :authenticate_member!
   def create
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.member_id = current_member.id

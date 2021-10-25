@@ -13,10 +13,12 @@ class Master::MembersController < ApplicationController
   end
 
   def update
-    member = Member.find(params[:id])
-    member.update(member_params)
-    redirect_to master_members_path
-    
+    @member = Member.find(params[:id])
+    if @member.update(member_params)
+      redirect_to master_members_path
+    else
+      render "edit"
+    end
   end
 
   private

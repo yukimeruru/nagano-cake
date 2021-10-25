@@ -1,5 +1,5 @@
 class Public::DeliveriesController < ApplicationController
-
+  before_action :authenticate_member!
   def create
     @delivery = Delivery.new(delivery_params)
     @delivery.member_id = current_member.id
