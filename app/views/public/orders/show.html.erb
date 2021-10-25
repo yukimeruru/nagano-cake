@@ -63,9 +63,9 @@
             <% @order.order_items.each do |order_item| %>
           <tr>
             <td><%= order_item.item.name %></td>
-            <td><%= order_item.price %></td>
+            <td><%= order_item.item.taxin_price.floor.to_s(:delimited) %></td>
             <td><%= order_item.count %></td>
-            <td><%= order_item.price * order_item.count%></td>
+            <td><%= (order_item.item.taxin_price.floor * order_item.count).to_s(:delimited) %></td>
           </tr>
         <% end %>
           </tbody>
