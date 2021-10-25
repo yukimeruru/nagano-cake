@@ -10,6 +10,11 @@ class Public::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
 
+  def search
+    @items = Item.search(params[:keyword]).page(params[:page]).per(5)
+
+  end
+
   private
 
     def item_params

@@ -1,7 +1,9 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
+
   def new
     @order = Order.new
+    @deliveries = current_member.deliveries
     p current_member
   end
 
@@ -61,7 +63,6 @@ class Public::OrdersController < ApplicationController
         render 'new'
       end
     end
-
     @total = 0
   end
 
