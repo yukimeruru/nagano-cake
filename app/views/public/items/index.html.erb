@@ -1,6 +1,8 @@
 <div class="container">
-  <div class="row my-3">
-    <div class="col-3"></div>
+  <div class="row mt-5">
+    <div class="col-3">
+      <%= render 'sidebar' %>
+    </div>
     <div class="col-8 offset-md-1">
       <h3>商品一覧　<small>全<%= @items.total_count %>件</small></h3>
       <div class="d-flex flex-row flex-wrap">
@@ -11,10 +13,17 @@
               <% end %>
               <%= item.name %>
               <span>¥<%= item.taxin_price.floor.to_s(:delimited) %></span>
+              <% if item.sales_status == true %>
+                <div class = text-success><strong><%= "販売中" %></strong></div>
+              <% else %>
+                <div class = text-danger><strong><%= "売り切れ" %></strong></div>
+              <% end %>
           </div>
         <% end %>
       </div>
+      <div class="m-5">
+        <%= paginate @items %>
+      </div>
     </div>
   </div>
-  <%= paginate @items %>
 </div>

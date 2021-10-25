@@ -12,7 +12,7 @@ class Public::DeliveriesController < ApplicationController
   end
 
   def index
-    @deliveries = Delivery.all
+    @deliveries = current_member.deliveries
     @delivery = Delivery.new
   end
 

@@ -15,7 +15,6 @@ class Public::MembersController < ApplicationController
     redirect_to members_path,notice:'更新されました'
     else
     render "edit"
-      
     end
 
   end
@@ -27,12 +26,11 @@ class Public::MembersController < ApplicationController
   def checkout
     @member = current_member
    if @member.update(member_status: false)
-    redirect_to root_path
+      reset_session 
+      redirect_to root_path
    else
-    render "show"
+      render "show"
    end
-    
-    
   end
 
   private
