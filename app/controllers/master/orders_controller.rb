@@ -6,13 +6,16 @@ class Master::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @orders = current_member.orders
-    @order_items = OrderItem.all
   end
 
   def update
     order = Order.find(params[:id])
     order.update(order_params)
+    if order.order_status == "check_pay"
+      order.order_items.each do |order_item|
+        order_item.update(make_status: 1)
+      end
+    end
     redirect_to master_order_path
   end
 

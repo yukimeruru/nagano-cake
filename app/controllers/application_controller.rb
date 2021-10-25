@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       when Admin
         master_orders_path
       when Member
-        items_path
+        members_path
       end
   end
 
