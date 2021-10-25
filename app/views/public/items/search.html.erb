@@ -8,7 +8,7 @@
             <th>商品画像</th>
             <th>商品名</th>
             <th>商品説明</th>
-            <th>税込み価格</th>
+            <th>価格（税込み）</th>
           </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
               <% end %>
             </td>
             <td><%= item.description %></td>
-            <td><%= item.taxin_price.floor.to_s(:delimited) %></td>
+            <td><%= item.taxin_price.floor.to_s(:delimited) %>円</td>
           </tr>
         <% end %>
         </tbody>
