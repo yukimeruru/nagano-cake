@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       delete "members/sign_out" => "member/sessions#destroy",as: :destroy_member_session
     end
 
+
+
   namespace :master do
     resources :items
     resources :genres
@@ -22,11 +24,13 @@ Rails.application.routes.draw do
     resources :members
   end
 
+
+  
+
   scope module: :public do
     root "homes#top"
     get "about" => "homes#about"
-    resources :items
-
+    resources :items do
     resources :cart_items, only: [:create, :index, :update, :destroy ]
     delete "cart_items" => "cart_items#destroy_all" ,as: :destroy_cart_item
 

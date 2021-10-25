@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-
+  before_action :authenticate_member!
   def new
     @order = Order.new
     p current_member
