@@ -13,6 +13,11 @@
               <% end %>
               <%= item.name %>
               <span>¥<%= item.taxin_price.floor.to_s(:delimited) %></span>
+              <% if item.sales_status == true %>
+                <div class = text-success><strong><%= "販売中" %></strong></div>
+              <% else %>
+                <div class = text-danger><strong><%= "売り切れ" %></strong></div>
+              <% end %>
           </div>
         <% end %>
       </div>
