@@ -10,12 +10,18 @@ class ApplicationController < ActionController::Base
       when Admin
         master_orders_path
       when Member
-        members_path
+
+       　root_path
+
       end
   end
 
-  def after_sign_out_path_for(resource)
-    root_path
+  def after_sign_out_path_for(resource_or_scope)
+      if resource_or_scope == :admin
+        new_admin_session_path
+      elsif resource_or_scope == :member
+        root_path
+      end
   end
 
   protected
