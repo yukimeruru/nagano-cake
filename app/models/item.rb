@@ -17,6 +17,6 @@ class Item < ApplicationRecord
   validates :sales_status, presence: true
 
   def self.search(keyword)
-    where(["name like ?", "%#{keyword}%"])
+    Item.where(["name LIKE(?)", "%#{keyword}%"])
   end
 end
