@@ -24,16 +24,13 @@ Rails.application.routes.draw do
     resources :members
   end
 
-
-  
-
   scope module: :public do
     root "homes#top"
     get "about" => "homes#about"
-    resources :items 
+    resources :items
+    get 'search' => 'items#search'
     resources :cart_items, only: [:create, :index, :update, :destroy ]
     delete "cart_items" => "cart_items#destroy_all" ,as: :destroy_cart_item
-
     post "orders/check" => "orders#check"
 
     get "orders/thanks" => "orders#thanks"
