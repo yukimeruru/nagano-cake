@@ -10,7 +10,7 @@
       <div class="field row form-group mb-5">
           <%= f.label :"ジャンル名", class: "col-3" %>
           <%= f.text_field :name, autofocus: true, placeholder:"ジャンル名", class: "col-4 form-control" %>
-          <%= f.submit '新規登録', class: "btn btn-md btn-success offset-1" %>
+          <%= f.submit '新規登録', class: "btn btn-md btn_success offset-1" %>
       </div>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
               <%= genre.name %>
             </td>
             <td>
-              <%= link_to "編集する", edit_master_genre_path(genre.id), class: 'btn btn-success' %>
+              <%= link_to "編集する", edit_master_genre_path(genre.id), class: 'btn btn_success' %>
             </td>
           </tr>
         <% end %>

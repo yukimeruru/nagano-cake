@@ -27,7 +27,7 @@
         <td>
           <%= form_with model: @order, url: master_order_path(@order.id), local:true do |f| %>
                   <%= f.select :order_status, Order.order_statuses_i18n.invert %>
-                  <%= f.submit '更新', class: "btn btn-sm btn-success" %>
+                  <%= f.submit '更新', class: "btn btn-sm btn_success" %>
           <% end %>
         </td>
       </tr>
@@ -55,7 +55,7 @@
               <td>
                 <%= form_with model: order_item, url: master_order_item_path(order_item.id), local:true do |f| %>
                   <%= f.select :make_status, OrderItem.make_statuses_i18n.invert %>
-                  <%= f.submit '更新', class: "btn btn-sm btn-success" %>
+                  <%= f.submit '更新', class: "btn btn-sm btn_success" %>
                 <% end %>
               </td>
             </tr>

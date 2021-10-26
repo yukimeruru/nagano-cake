@@ -146,7 +146,7 @@
 .btn_success {
  position: relative;
  padding: 10px;
- width: 175px;
+ width: em;
  font-size: 14px;
  background-color: gray;
  color: #fff;
@@ -156,7 +156,7 @@
 .btn_primary {
  position: relative;
  padding: 10px;
- width: 175px;
+ width: em;
  font-size: 14px;
  background-color: #fff;
  color: gray;
@@ -167,11 +167,12 @@
 .btn_danger {
  position: relative;
  padding: 10px;
- width: 175px;
+ width: em;
  font-size: 14px;
- background-color: red;
+ background-color: #B22222;
  color: #fff;
  line-height   : 1em;
+}
 
 .btn-social-icon-twitter {
   text-decoration: none;
@@ -211,6 +212,7 @@
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
+}
 
 .text-background-test01 {
   color: #666666;
@@ -256,4 +258,10 @@
   border-width: 25px 15px 25px 0px;
   border-color: transparent #fff transparent transparent;
   border-style: solid;
+}
+
+.carousel-item {
+ width: 600px;
+ height: 400px;
+ margin-left: 150px;
 }
