@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
     <%= render 'master/genres/genre', genres: @genres %>
-    <div class="col-md-10">
+    <div class="col-8 offset-1">
       <h3 class="ribbon1">商品一覧　<small>全<%= @items.total_count %>件</small></h3>
       <div class="d-flex flex-row flex-wrap">
         <% @items.each do |item| %>

@@ -261,7 +261,11 @@
 }
 
 .carousel-item {
- width: 600px;
- height: 400px;
- margin-left: 150px;
+  height: 400px;
+
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
 }
