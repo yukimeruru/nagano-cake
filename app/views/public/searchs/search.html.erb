@@ -22,7 +22,7 @@
             <%= data.name %>
             <% end %>
           </td>
-           <td><%= data.price %>円</td>
+           <td><%= (data.price * 1.1).floor.to_s(:delimited)%>円</td>
         </tr>
       <% end %>
       </tbody>
