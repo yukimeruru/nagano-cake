@@ -1,10 +1,10 @@
-<div class = "contener my-3" >
-  <div class = "row" >
-    <div class = "col-8 mx-auto" >
-      <h3>注文情報入力</h3>
+<div class="contener my-3" >
+  <div class="row" >
+    <div class="col-8 mx-auto" >
+      <h3 class="ribbon1">注文情報入力</h3>
       <%= form_with model: @order, url:"/orders/check", local:true, method: :post do |f| %>
 
-        <div class = "form-group">
+        <div class="form-group">
           <h5><strong>支払方法</strong></h5>
           <div style="margin-left: 40px">
             <%= f.radio_button :payment_method, 0, checked: true %> <%= f.label :クレジットカード %>
@@ -13,7 +13,7 @@
             <%= f.radio_button :payment_method, 1 %>　<%= f.label :銀行振込 %>
           </div>
         </div>
-        <div class = "form-group">
+        <div class="form-group">
           <h5><strong>お届け先</strong></h5>
           <div style="margin-left: 40px">
             <%= f.radio_button :address_number, 0, checked: true %> <%= f.label :ご自身の住所 %>
@@ -25,19 +25,18 @@
             <div style="margin-left: 30px"><%= f.collection_select :deliverise_id, @deliveries, :id, :member_info, { prompt: '選択してください' }, class: 'form-control col-8' %></div>
           </div>
           <div style="margin-left: 40px">
-            <div class = table ></div>
             <%= f.radio_button :address_number, 2 %> <%= f.label :新しいお届け先 %>
             <div class = "row">
               <div style="margin-left: 30px">郵便番号(ハイフンなし)</div>
-              <div class = "col-3"><%= f.text_field :post_code, placeholder:"0000000" %></div>
+              <div class="col-3"><%= f.text_field :post_code, placeholder:"0000000" %></div>
             </div>
-            <div class = "row my-1">
+            <div class="row my-1">
               <div style="margin-left: 30px">住所</div>
-              <div class = "col-6"><%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0", class: 'col-10' %></div>
+              <div class="col-6"><%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0", class: 'col-10' %></div>
             </div>
-            <div class = "row my-1">
+            <div class="row my-1">
               <div style="margin-left: 30px">宛名</div>
-              <div class = "col-3"><%= f.text_field :name, placeholder:"令和道子" %></div>
+              <div class="col-3"><%= f.text_field :name, placeholder:"令和道子" %></div>
             </div>
           </div>
         </div>

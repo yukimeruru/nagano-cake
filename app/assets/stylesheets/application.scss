@@ -122,6 +122,7 @@
  border: 1px solid #aaa;
 }
 
+
 .btn-social-icon-twitter {
   text-decoration: none;
   display: inline-block;
@@ -160,4 +161,49 @@
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
+
+.text-background-test01 {
+  color: #666666;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4em;
+  padding: 5px;
+  background-color:rgba(255,255,255,0.5);
+}
+
+.ribbon1 {
+  display: inline-block;
+  position: relative;
+  height: 50px;/*リボンの高さ*/
+  line-height: 50px;/*リボンの高さ*/
+  text-align: center;
+  padding: 0 30px;/*横の大きさ*/
+  font-size: 18px;/*文字の大きさ*/
+  background: #f57a78;/*塗りつぶし色*/
+  color: #FFF;/*文字色*/
+  box-sizing: border-box;
+}
+
+.ribbon1:before, .ribbon1:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon1:before {
+  top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon1:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
 }
