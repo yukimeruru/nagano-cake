@@ -53,7 +53,7 @@
                 <% end %>
               </div>
             </ul>
-            <div class="ml-auto">
+            <div class="row ml-auto">
               <%= form_with url: search_path, method: :get, class: "search form-inline", local: true do |f| %>
                 <%= f.text_field 'search[value]', placeholder:"商品名", class: "search_form" %>
                 <%= f.hidden_field 'search[how]', value: "partical" %>
