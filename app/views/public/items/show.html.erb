@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row mt-5">
     <%= render 'master/genres/genre', genres: @genres %>
-    <div class="col-4 offset-md-1">
-      <%= attachment_image_tag(@item, :image,:fill, 200, 200) %>
+    <div class="col-4 mt-5 offset-md-1">
+      <%= attachment_image_tag(@item, :image,:fill, 300, 300) %>
     </div>
-    <div class="col-4">
+    <div class="col-4 mt-5">
       <h3><%= @item.name %></h3>
       <p><%= @item.description %></p>
       <p><strong>¥ <%= @item.taxin_price.floor.to_s(:delimited) %></strong><small>（税込）</small></p>
