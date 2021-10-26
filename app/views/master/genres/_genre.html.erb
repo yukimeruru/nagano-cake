@@ -1,0 +1,12 @@
+<div class="col-md-3 mt-5">
+  <div class="list-group mb-5 shadow-sm rounded">
+    <sapn class="list-group-item text-light"  style="background-color:#808080">
+      ジャンル検索
+    </sapn>
+    <% @genres.each do |genre| %>
+    <div class="list-group-item">
+      <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match") %>
+    </div>
+    <% end %>
+  </div>
+</div>

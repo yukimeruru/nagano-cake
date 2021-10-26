@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+      <% if @datas.empty? %>
+      <div class="col-12 my-4 text-center">
+        <h2>該当する商品はありません</h2>
+      </div>
+      <% end %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>商品画像</th>
+          <th>商品名</th>
+          <th>税込み価格</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @datas.each do |data| %>
+        <tr>
+          <td><%= attachment_image_tag data, :image, size: "130x100", class: "img_hover" %></td>
+          <td>
+            <%= link_to item_path(data.id) do %>
+            <%= data.name %>
+            <% end %>
+          </td>
+           <td><%= data.price %>円</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination"><%= paginate @datas %></div>
+</div>

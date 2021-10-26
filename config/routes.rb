@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
@@ -27,8 +28,8 @@ Rails.application.routes.draw do
   scope module: :public do
     root "homes#top"
     get "about" => "homes#about"
+    get 'search' => "searchs#search"
     resources :items
-    get 'search' => 'items#search'
     resources :cart_items, only: [:create, :index, :update, :destroy ]
     delete "cart_items" => "cart_items#destroy_all" ,as: :destroy_cart_item
     post "orders/check" => "orders#check"
