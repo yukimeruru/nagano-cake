@@ -5,7 +5,7 @@
     </sapn>
     <% @genres.each do |genre| %>
     <div class="list-group-item">
-      <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match") %>
+      <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match"), class:"link" %>
     </div>
     <% end %>
   </div>
