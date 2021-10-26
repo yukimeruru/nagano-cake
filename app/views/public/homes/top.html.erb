@@ -3,14 +3,30 @@
     <%= render 'master/genres/genre', genres: @genres %>
     <div class="col-md-9">
       <div class="homes_top">
-        <%= image_tag 'homes-top3.jpg', size: "700x450" %>
-        <p class="h4">
-          ようこそ、ながのCAKEへ！<br>
-          このサイトは、ケーキ販売のECサイトになります。<br>
-          会員ではない方も商品の閲覧はできますが、<br>
-          購入には会員登録が必要になります。
-        </p>
-      </div>
+        <div class="carousel slide" data-ride="carousel"  class="d-block w-100">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/berry-cake-gc3f06ff43_1920.jpeg" alt="First slide" >
+                  <div class="carousel-caption" style="top:50px">
+                    <p>ようこそ、ながのCAKEへ！</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/cake-gf7fe55781_1920.jpeg" alt="Second slide">
+                  <div class="carousel-caption" style="top:50px">
+                    <p>このサイトは、ケーキ販売のECサイトになります。</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/cake-g11b326a76_1920.jpeg" alt="Third slide">
+                  <div class="carousel-caption" style="top:50px">
+                    <p>会員ではない方も商品の閲覧はできますが、<br>
+                         購入には会員登録が必要になります。
+                    </p>
+                 </div>
+              </div>
+            </div>
+        </div>
       <h4 class="mb-1">新着商品</h4>
       <div class="row">
         <% @items.each do |item| %>
