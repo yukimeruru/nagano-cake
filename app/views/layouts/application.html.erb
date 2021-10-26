@@ -37,10 +37,10 @@
                 <li class="nav-item mr-1"><%= link_to "ジャンル一覧", master_genres_path, class: "nav-link fas fa-list-alt" %></li>
                 <li class="nav-item mr-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link fas fa-sign-out-alt" %></li>
               <% else %>
-                <li class="nav-item mr-1"><%= link_to "About", about_path, class: "nav-link fas fa-store" %></li>
-                <li class="nav-item mr-1"><%= link_to "商品一覧", items_path, class: "nav-link fas fa-align-justify" %></li>
-                <li class="nav-item mr-1"><%= link_to "新規登録", new_member_registration_path, class: "nav-link fas fa-user-plus" %></li>
-                <li class="nav-item mr-1"><%= link_to "ログイン", new_member_session_path, class: "nav-link fas fa-sign-in-alt" %></li>
+                <li class="nav-item mr-3"><%= link_to "About", about_path, class: "nav-link fas fa-store" %></li>
+                <li class="nav-item mr-3"><%= link_to "商品一覧", items_path, class: "nav-link fas fa-cheese" %></li>
+                <li class="nav-item mr-3"><%= link_to "新規登録", new_member_registration_path, class: "nav-link fas fa-user-plus" %></li>
+                <li class="nav-item mr-3"><%= link_to "ログイン", new_member_session_path, class: "nav-link fas fa-sign-in-alt" %></li>
               <% end %>
               <div class="col-1">
                 <%= link_to url: "#", class:"btn-social-icon-instagram" do %>
