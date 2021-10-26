@@ -25,6 +25,12 @@
    font-family: 'Shippori Mincho', serif;
  }
 
+ .link {
+  text-decoration: none;
+  list-style: none;
+  color: gray ;
+ }
+
  .container-fluid{
   width: 80%;
  }
@@ -122,6 +128,50 @@
  border: 1px solid #aaa;
 }
 
+.search_form {
+ padding:8px 0 8px 8px;
+ border:none;
+}
+
+.btn {
+    // appearance: none;
+    // margin: 0;
+    // padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.btn_success {
+ position: relative;
+ padding: 10px;
+ width: 175px;
+ font-size: 14px;
+ background-color: gray;
+ color: #fff;
+ line-height   : 1em;
+}
+
+.btn_primary {
+ position: relative;
+ padding: 10px;
+ width: 175px;
+ font-size: 14px;
+ background-color: #fff;
+ color: gray;
+ line-height   : 1em;
+ border: 1px solid;
+}
+
+.btn_danger {
+ position: relative;
+ padding: 10px;
+ width: 175px;
+ font-size: 14px;
+ background-color: red;
+ color: #fff;
+ line-height   : 1em;
 
 .btn-social-icon-twitter {
   text-decoration: none;

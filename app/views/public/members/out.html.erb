@@ -14,11 +14,11 @@
 
   <div class="row">
     <div class="offset-3 col-2">
-    <%= link_to "退会しない" ,members_path, class: "btn btn-primary" %>
+    <%= link_to "退会しない" ,members_path, class: "btn btn_primary" %>
     <!-- マイページへ-->
     </div>
     <div class="offset-2 col-2">
-    <%= link_to "退会する" , members_checkout_path(@member),method: :patch, class: "btn btn-danger", data: { confirm: '本当に退会しますか？' } %>
+    <%= link_to "退会する" , members_checkout_path(@member),method: :patch, class: "btn btn_danger", data: { confirm: '本当に退会しますか？' } %>
     <!-- 会員ステータスを無効に切り替えるcheckoutアクションを呼ぶ-->
     </div>
   </div>
