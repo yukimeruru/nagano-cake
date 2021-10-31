@@ -9,7 +9,7 @@ class Order < ApplicationRecord
   validates :post_code, presence: true
   validates :address, presence: true
   validates :order_status, presence: true
-  
+
   has_many :order_items, dependent: :destroy
 
   enum payment_method: { credit_card: 0, transfer: 1 }
